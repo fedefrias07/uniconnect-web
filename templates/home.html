@@ -1,0 +1,25 @@
+{%extends 'base.html'%}
+
+{% block title %}
+{% if 'usuario_nombre' in session %}
+    {{super()}}
+        de {{ session['usuario_nombre'] }}
+    {% else %}
+        Hola Invitado
+    {% endif %}
+{% endblock %}
+
+{%block content%}
+
+{% if 'usuario_nombre' in session %}
+        <h1>Bienvenido, {{ session['usuario_nombre'] }}!</h1>
+        {% else %}
+        <h1>Bienvenido!</h1>
+        {% endif %}
+
+
+{%endblock%}
+
+
+
+

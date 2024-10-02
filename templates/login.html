@@ -1,0 +1,24 @@
+{%extends 'base.html'%}
+
+{%block title%} Login {%endblock%}
+
+{%block content%}
+<div class="container mt-5">
+    <h2>Iniciar sesion</h2>
+    {% if error %}
+        <p style="color: red;">{{ error }}</p>
+    {% endif %}
+    <form method="post">
+        <div class="mb-3">
+            <label for="email" class="form-label">Correo Electrónico</label>
+            <input type="email" class="form-control" name="correo" required>
+        </div>
+        <div class="mb-3">
+            <label for="password" class="form-label">Contraseña</label>
+            <input type="password" class="form-control" name="contrasena" required>
+        </div>
+        <button type="submit" class="btn btn-primary">Ingresar</button>
+    </form>
+</div>
+
+{%endblock%}

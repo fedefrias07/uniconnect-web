@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    {% if 'usuario_nombre' in session %}
+        Hola {{ session['usuario_nombre'] }}
+    {% else %}
+        Hola Invitado
+    {% endif %}
+{% endblock %}
+
+{% block content %}
+    {% if 'usuario_nombre' in session %}
+        <h2> Este es el perfil de {{ session['usuario_nombre'] }}</h2>
+        <!-- Puedes añadir más información del perfil aquí -->
+    {% endif %}
+{% endblock %}
