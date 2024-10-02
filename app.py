@@ -23,6 +23,9 @@ def registro():
 
     if request.method == "POST":
         nombre = request.form['nombre']
+        apellido = request.form['apellido']
+        foto = ""
+        usuario = request.form['usuario']
         correo = request.form['correo']
         contrasena = request.form['contrasena']
 
@@ -35,7 +38,7 @@ def registro():
 
             cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
             try:
-                cursor.execute("INSERT INTO usuarios (nombre, correo, contrasena) VALUES (%s, %s, %s)", (nombre, correo, hashed_password))
+                cursor.execute("INSERT INTO usuario (nombre, apellido, foto, nombre_usuario, correo, contrasena) VALUES (%s, %s, %s, %s, %s, %s)", (nombre, apellido, foto, usuario, correo,hashed_password))
                 mysql.connection.commit()
                 return redirect("/login")
             except MySQLdb.IntegrityError:
@@ -48,6 +51,7 @@ def registro():
 
 @app.route("/login", methods=["GET", "POST"])
 def login():
+
     error = None  # Variable para el mensaje de error
 
     if request.method == "POST":
@@ -61,7 +65,7 @@ def login():
         else:
             # Conexión a la base de datos para obtener el usuario
             cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
-            cursor.execute("SELECT * FROM usuarios WHERE correo = %s", (correo,))
+            cursor.execute("SELECT * FROM usuario WHERE correo = %s", (correo,))
             usuario = cursor.fetchone()  # Obtenemos el registro
             cursor.close()
 

@@ -1,24 +1,56 @@
-{%extends 'base.html'%}
+{%extends 'base-login-registro.html'%}
 
 {%block title%} Login {%endblock%}
 
 {%block content%}
-<div class="container mt-5">
-    <h2>Iniciar sesion</h2>
-    {% if error %}
-        <p style="color: red;">{{ error }}</p>
-    {% endif %}
-    <form method="post">
-        <div class="mb-3">
-            <label for="email" class="form-label">Correo Electrónico</label>
-            <input type="email" class="form-control" name="correo" required>
+
+<div class="d-flex flex-column min-vh-100">
+
+
+<!--login -->
+
+<div class="container my-auto">
+    <div class="row">
+        <div class="col-md-6 d-flex flex-column justify-content-center align-items-center align-items-md-start text-center text-md-start mb-3 mb-md-0">
+            <h1 class="display-4 fw-bold UniConnect mb-0">UNICONNECT</h1>
+            <p class="lead d-none d-md-block">Donde las personas aprenden juntos.</p>
         </div>
-        <div class="mb-3">
-            <label for="password" class="form-label">Contraseña</label>
-            <input type="password" class="form-control" name="contrasena" required>
+        <div class="col-md-6 d-flex justify-content-center align-items-center"> <!--CONTENEDOR DEL FORM-->
+            <div class="card p-4 shadow " style="width: 100%; max-width: 400px;">
+                <h3 class="mb-3 text-center">Iniciar sesión</h3>
+
+                {% if error %}
+                <p style="color: red;">{{ error }}</p>
+                {% endif %}
+                <form action="" method="post">
+                    <div class="mb-3">
+                        <input type="email" class="form-control p-2" id="email" name="correo" placeholder="Correo electrónico" required>
+                    </div>
+                    <div class="mb-3">
+                      
+                        <input type="password" class="form-control p-2" id="password" name="contrasena" placeholder="Contraseña" required>
+                    </div>
+                    <button type="submit" class="btn w-100 mb-3 p-2 btniniciar">Iniciar sesión</button>
+                    <a href="#" class="text-decoration-none d-block text-center mb-3 btnolvidaste">¿Olvidaste tu contraseña?</a>
+
+                    <a href="" class="btn w-100 p-2 btnregistrarse mb-2 "data-bs-toggle="modal" data-bs-target="#registerModal"> Registrarte</a>
+
+                   
+                  
+                    <button type="button" class="btn  w-75 d-flex align-items-center justify-content-center p-3 m-2  mx-auto btngoogle ">
+                        <img src="https://kgo.googleusercontent.com/profile_vrt_raw_bytes_1587515358_10512.png" alt="Google Logo" style="width: 20px; margin-right: 10px;">
+                        Sign up with Google
+                    </button>
+                </form>
+            </div>
         </div>
-        <button type="submit" class="btn btn-primary">Ingresar</button>
-    </form>
+    </div>
 </div>
+
+
+<!-- {%include "registro.html"%} -->
+
+
+
 
 {%endblock%}

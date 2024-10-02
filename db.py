@@ -7,7 +7,7 @@ def init_db(app):
     app.config['MYSQL_HOST'] = 'localhost'
     app.config['MYSQL_USER'] = 'root'
     app.config['MYSQL_PASSWORD'] = ''
-    app.config['MYSQL_DB'] = 'test_login'
+    app.config['MYSQL_DB'] = 'unibase'
 
     try:
         # Inicializamos la extensión MySQL con la app de Flask

@@ -1,0 +1,79 @@
+
+h1 {
+    color: #1C2E40;
+}
+.lead{
+    font-size: 30px;
+}
+
+.card {
+    background-color: #FFFFFF;
+    border: none;
+    border-radius: 8px;
+}
+
+footer {
+    font-size: 14px;
+    border-top: 1px solid #bbbbbb;
+}
+
+footer a {
+    text-decoration: none;
+    color: #000000;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+footer p {
+    color: #555555;
+}
+.btnolvidaste{
+    color: #555555;
+    font-size: 15px;
+    letter-spacing: 1px;
+}
+
+.btngoogle, .btngoogle:hover{
+    background: #4285F4;
+    color: white;
+    font-weight: 600;
+}
+
+
+.btnregistrarse{
+    border-color: #1C2E40;
+}
+.btnregistrarse:hover{
+  background: #1C2E40;
+  color: white;
+}
+
+.btniniciar {
+    background: #1C2E40;
+    color: white;
+}
+.btniniciar:hover{
+    color: white;
+    background: #29445e;
+}
+.UniconnectInc{
+font-size: 12px;
+
+
+}
+
+.footeropciones > a {
+    
+    font-weight: 600;
+}
+
+
+.btnregistrado{
+    background: #1C2E40;
+    color: white;
+}
+.btnregistrado:hover{
+ background: #29445e;
+}
